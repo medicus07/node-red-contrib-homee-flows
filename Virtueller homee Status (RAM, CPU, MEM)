@@ -1,0 +1,154 @@
+[
+    {
+        "id": "e7a8c3a8.cee2a",
+        "type": "homeeDevice",
+        "z": "c18e4cb8.b7921",
+        "homee-sim": "3cb0442.da4adbc",
+        "name": "homee Systemstatus",
+        "nodeId": "502",
+        "profile": "1",
+        "icon": "default",
+        "attributes": "[{\"id\":474,\"node_id\":502,\"instance\":0,\"minimum\":0,\"maximum\":5,\"current_value\":0,\"target_value\":0,\"last_value\":3,\"unit\":\"n%2Fa\",\"step_value\":1,\"editable\":1,\"type\":205,\"state\":1,\"last_changed\":1570085457,\"changed_by\":2,\"changed_by_id\":1,\"based_on\":1,\"data\":\"\"},{\"id\":2373,\"node_id\":502,\"instance\":0,\"minimum\":0,\"maximum\":100,\"current_value\":65.676,\"target_value\":65.676,\"last_value\":65.913,\"unit\":\"%25\",\"step_value\":0.1,\"editable\":0,\"type\":311,\"state\":1,\"last_changed\":1573742341,\"changed_by\":1,\"changed_by_id\":0,\"based_on\":1,\"data\":\"\"},{\"id\":2374,\"node_id\":502,\"instance\":0,\"minimum\":0,\"maximum\":100,\"current_value\":52.833,\"target_value\":52.833,\"last_value\":60.545,\"unit\":\"%25\",\"step_value\":0.1,\"editable\":0,\"type\":312,\"state\":1,\"last_changed\":1573742341,\"changed_by\":1,\"changed_by_id\":0,\"based_on\":1,\"data\":\"\"},{\"id\":2375,\"node_id\":502,\"instance\":0,\"minimum\":0,\"maximum\":100,\"current_value\":28.954,\"target_value\":28.954,\"last_value\":29.604,\"unit\":\"%25\",\"step_value\":0.1,\"editable\":0,\"type\":313,\"state\":1,\"last_changed\":1573742341,\"changed_by\":1,\"changed_by_id\":0,\"based_on\":1,\"data\":\"\"}]",
+        "x": 480,
+        "y": 80,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "18e599d6.62ca86",
+        "type": "mqtt in",
+        "z": "c18e4cb8.b7921",
+        "name": "",
+        "topic": "homee/2373",
+        "qos": "2",
+        "datatype": "utf8",
+        "broker": "a42796a4.c826d8",
+        "x": 110,
+        "y": 80,
+        "wires": [
+            [
+                "26bd8eb7.f5f5c2"
+            ]
+        ]
+    },
+    {
+        "id": "26bd8eb7.f5f5c2",
+        "type": "template",
+        "z": "c18e4cb8.b7921",
+        "name": "",
+        "field": "payload",
+        "fieldType": "msg",
+        "format": "handlebars",
+        "syntax": "mustache",
+        "template": "{\"id\":2373,\"value\":{{payload}}}",
+        "output": "json",
+        "x": 280,
+        "y": 80,
+        "wires": [
+            [
+                "e7a8c3a8.cee2a"
+            ]
+        ]
+    },
+    {
+        "id": "174cfdde.0ac082",
+        "type": "mqtt in",
+        "z": "c18e4cb8.b7921",
+        "name": "",
+        "topic": "homee/2374",
+        "qos": "2",
+        "datatype": "utf8",
+        "broker": "a42796a4.c826d8",
+        "x": 110,
+        "y": 120,
+        "wires": [
+            [
+                "19b72fd7.c64b4"
+            ]
+        ]
+    },
+    {
+        "id": "19b72fd7.c64b4",
+        "type": "template",
+        "z": "c18e4cb8.b7921",
+        "name": "",
+        "field": "payload",
+        "fieldType": "msg",
+        "format": "handlebars",
+        "syntax": "mustache",
+        "template": "{\"id\":2374,\"value\":{{payload}}}",
+        "output": "json",
+        "x": 280,
+        "y": 120,
+        "wires": [
+            [
+                "e7a8c3a8.cee2a"
+            ]
+        ]
+    },
+    {
+        "id": "bd806b67.39fbb8",
+        "type": "mqtt in",
+        "z": "c18e4cb8.b7921",
+        "name": "",
+        "topic": "homee/2375",
+        "qos": "2",
+        "datatype": "utf8",
+        "broker": "a42796a4.c826d8",
+        "x": 110,
+        "y": 160,
+        "wires": [
+            [
+                "5ba905ff.e07dec"
+            ]
+        ]
+    },
+    {
+        "id": "5ba905ff.e07dec",
+        "type": "template",
+        "z": "c18e4cb8.b7921",
+        "name": "",
+        "field": "payload",
+        "fieldType": "msg",
+        "format": "handlebars",
+        "syntax": "mustache",
+        "template": "{\"id\":2375,\"value\":{{payload}}}",
+        "output": "json",
+        "x": 280,
+        "y": 160,
+        "wires": [
+            [
+                "e7a8c3a8.cee2a"
+            ]
+        ]
+    },
+    {
+        "id": "3cb0442.da4adbc",
+        "type": "virtualHomee",
+        "z": "",
+        "name": "1234"
+    },
+    {
+        "id": "a42796a4.c826d8",
+        "type": "mqtt-broker",
+        "z": "",
+        "name": "",
+        "broker": "192.168.178.61",
+        "port": "1883",
+        "clientid": "",
+        "usetls": false,
+        "compatmode": true,
+        "keepalive": "60",
+        "cleansession": true,
+        "birthTopic": "",
+        "birthQos": "0",
+        "birthPayload": "",
+        "closeTopic": "",
+        "closeQos": "0",
+        "closePayload": "",
+        "willTopic": "",
+        "willQos": "0",
+        "willPayload": ""
+    }
+]
